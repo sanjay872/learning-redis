@@ -7,13 +7,14 @@ Redis in windows - https://github.com/microsoftarchive/redis/releases
 
 use the zip file and run `redis-server` file.
 
-**Redis as Database**
+## Redis as Database
 
-Dependencies
-- `Spring Web`
-- `Spring Data Redis (Access + driver)`
-- `jedis` (from maven repository)
+**Dependencies**
+  - `Spring Web`
+  - `Spring Data Redis (Access + driver)`
+  - `jedis` (from maven repository)
 
+**Steps**
 1. create entity and add @RedisHash(”Table_name”)
 2. create a class for adding redis configuration, add configuration and EnableRedisRepository
 3. create JedisConnectionFactory bean and add hostname and port.
