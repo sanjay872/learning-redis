@@ -20,3 +20,28 @@ use the zip file and run `redis-server` file.
 3. create JedisConnectionFactory bean and add hostname and port.
 4. with this the connection is established, now we need a template to access the redis.
 5. access the redis database by injecting redis template and getting the data.
+
+## Redis as cache
+
+- add @EnableCaching on top of main class
+- add @Cacheable on top of the get request of the controller or on the service method.
+- add args of key as ‘#id’ and value as “Product” (which is the hash key)
+
+`@Cacheable(key="#id", value = "Product")`
+
+**With Condition**
+
+`unless = "#result.price>1000"`
+
+this will ensure that only the product that has price less than 1000 will be cached.
+
+The data is opposite of the given condition will be cached.
+
+**CacheEvict**
+
+Delete data from Cache that is deleted from database.
+`@CacheEvict(key = "#id",value = "Product")`
+
+**CachePut**
+
+To update the cache if the data got updated in db.
