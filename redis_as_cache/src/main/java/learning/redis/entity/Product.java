@@ -12,7 +12,7 @@ import java.io.Serializable;
 //@Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@RedisHash("Product") // it enables to use spring data repository to interact with redis and also to mark it as product entity
+//@RedisHash("Product") // it enables to use spring data repository to interact with redis and also to mark it as product entity
 public class Product implements Serializable {
     @Id
     private int id;
